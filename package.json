@@ -1,0 +1,38 @@
+{
+    "name": "moss",
+    "publisher": "mikaela md <mikomdias@yahoo.com>",
+    "displayName": "moss syntax highlight",
+    "description": "basic code highlighting for the moss programming language",
+    "version": "0.0.1",
+    "license": "BUNNYWARE",
+    "engines": {
+        "vscode": "^1.99.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "keywords": [
+		"moss", "mmc"
+	],
+    "contributes": {
+        "languages": [{
+            "id": "moss",
+            "aliases": ["moss", "mmc"],
+            "extensions": [".ms"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "moss",
+            "scopeName": "source.moss",
+            "path": "./moss.tmLanguage.json"
+        }]
+    },
+    "__metadata": {
+		"publisherDisplayName": "mikaela morais dias",
+		"targetPlatform": "universal",
+		"isApplicationScoped": false,
+		"updated": true,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false
+	}
+}

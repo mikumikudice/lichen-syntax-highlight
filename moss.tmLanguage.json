@@ -1,0 +1,256 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "moss",
+    "fileTypes": ["ms"],
+    "scopeName": "source.moss",
+	"patterns": [
+        {
+        "include": "#comment"
+		},
+		{
+        "include": "#keyword"
+		},
+        {
+        "include": "#type"
+		},
+		{
+        "include": "#literal"
+		},
+        {
+        "include": "#operator"
+		},
+        {
+        "include": "#punctuation"
+		},
+        {
+        "include": "#identifier"
+		}
+	],
+	"repository": {
+        "comment": {
+            "patterns": [
+                {
+                "name": "comment.line.double-slash.moss",
+                "match": "(\\/\\/).*",
+                "captures": {
+                    "1": {
+                    "name": "punctuation.definition.comment.moss"
+                    }
+                }
+                }
+            ]
+        },
+        "escape": {
+            "patterns": [
+                {
+                "name": "constant.character.escape.moss",
+                "match": "\\\\([tbarnf0\\\\\\'\\\"])"
+                },
+                {
+                "name": "invalid.illegal.character.escape.moss",
+                "match": "\\\\."
+                }
+            ]
+        },
+        "identifier": {
+            "patterns": [
+                {
+                "name": "entity.name.function.moss",
+                "match": "\\b[_a-zA-Z0-9]+[']*(?=\\s*\\()"
+                },
+                {
+                "name": "entity.name.namespace.moss",
+                "match": "\\b[_a-zA-Z0-9]+[']*(?=\\s*::)"
+                },
+                {
+                "name": "variable.other.moss",
+                "match": "\\b[_a-zA-Z0-9]+[']*\\b"
+                }
+            ]
+        },
+        "integer-literal": {
+            "patterns": [
+                {
+                "name": "constant.numeric.hex.moss",
+                "match": "\\b0x[0-9A-Fa-f_]+\\b",
+                "captures": {
+                    "1": {
+                    "name": "entity.name.type.numeric.moss"
+                    }
+                }
+                },
+                {
+                "name": "constant.numeric.oct.moss",
+                "match": "\\b0o[0-7_]+\\b",
+                "captures": {
+                    "1": {
+                    "name": "entity.name.type.numeric.moss"
+                    }
+                }
+                },
+                {
+                "name": "constant.numeric.bin.moss",
+                "match": "\\b0b[01_]+\\b",
+                "captures": {
+                    "1": {
+                    "name": "entity.name.type.numeric.moss"
+                    }
+                }
+                },
+                {
+                "name": "constant.numeric.decimal.moss",
+                "match": "\\b[0-9][0-9_]*\\b",
+                "captures": {
+                    "1": {
+                    "name": "entity.name.type.numeric.moss"
+                    }
+                }
+                }
+            ]
+        },
+        "keyword": {
+            "patterns": [
+                {
+                "name": "entity.name.type.primitive.moss",
+                "match": "\\b(?:str|unit|void)\\b"
+                },
+                {
+                "name": "entity.name.type.numeric.moss",
+                "match": "\\b(?:u8|u16|u32|u64|i8|i16|i32|i64|f32|f64)\\b"
+                },
+                {
+                "name": "constant.language.null.moss",
+                "match": "\\b(?:todo|fail|do)\\b"
+                },
+                {
+                "name": "keyword.control.moss",
+                "match": "\\b(?:if|else|for|match|test)\\b"
+                },
+                {
+                "name": "keyword.other.moss",
+                "match": "\\b(?:pub|use|type|let|fn)\\b"
+                }
+            ]
+        },
+        "literal": {
+            "patterns": [
+                {
+                "include": "#integer-literal"
+                },
+                {
+                "include": "#string-literal"
+                },
+                {
+                "include": "#rune-literal"
+                }
+            ]
+        },
+        "operator": {
+            "patterns": [
+                {
+                "name": "keyword.operator.assignment.moss",
+                "match": "="
+                },
+                {
+                "name": "keyword.operator.logical.moss",
+                "match": "(?:&&|\\|\\||\\^\\^)"
+                },
+                {
+                "name": "keyword.operator.bitwise.moss",
+                "match": "(?:~|&|\\||\\^|<<|>>)"
+                },
+                {
+                "name": "keyword.operator.comparison.moss",
+                "match": "(?:==|!=|<|<=|>|>=)"
+                },
+                {
+                "name": "keyword.operator.arithmetic.moss",
+                "match": "(?:\\+|\\-|\\*|\\/|%)"
+                },
+                {
+                "name": "keyword.operator.namespace.moss",
+                "match": "::"
+                },
+                {
+                "name": "keyword.operator.moss",
+                "match": "(?:!|\\?|:|\\$|@|#|\\.|\\.\\.|\\.\\.\\.)"
+                }
+            ]
+        },
+        "punctuation": {
+            "patterns": [
+                {
+                "name": "punctuation.comma.moss",
+                "match": ","
+                },
+                {
+                "name": "punctuation.semi.moss",
+                "match": ";"
+                },
+                {
+                "name": "punctuation.brackets.round.moss",
+                "match": "[()]"
+                },
+                {
+                "name": "punctuation.brackets.square.moss",
+                "match": "[\\[\\]]"
+                },
+                {
+                "name": "punctuation.brackets.curly.moss",
+                "match": "[{}]"
+                }
+            ]
+        },
+        "rune-literal": {
+            "patterns": [
+                {
+                "name": "string.quoted.single.rune.moss",
+                "begin": "'\\b",
+                "beginCaptures": {
+                    "0": {
+                    "name": "punctuation.definition.rune.moss"
+                    }
+                },
+                "end": "\\b'",
+                "endCaptures": {
+                    "0": {
+                    "name": "punctuation.definition.rune.moss"
+                    }
+                },
+                "patterns": [
+                    {
+                    "include": "#escape"
+                    }
+                ]
+                }
+            ]
+        },
+        "string-literal": {
+            "patterns": [
+                {
+                "name": "string.quoted.double.moss",
+                "begin": "\"",
+                "beginCaptures": {
+                    "0": {
+                    "name": "punctuation.definition.string.moss"
+                    }
+                },
+                "end": "\"",
+                "endCaptures": {
+                    "0": {
+                    "name": "punctuation.definition.string.moss"
+                    }
+                },
+                "patterns": [
+                    {
+                    "include": "#escape"
+                    },
+                    {
+                    "include": "#format"
+                    }
+                ]
+                }
+            ]
+        }
+	}
+}
