@@ -1,2 +1,2 @@
 # about
-simple syntax highlighting for the [moss programming language](https://git.sr.ht/~mikaela-md/mossy/).
+simple syntax highlighting for the [lichen programming language](https://git.sr.ht/~mikaela-md/llc/).

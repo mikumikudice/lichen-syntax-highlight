@@ -1,8 +1,8 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "moss",
-    "fileTypes": ["ms"],
-    "scopeName": "source.moss",
+	"name": "lichen",
+    "fileTypes": [".lic", ".lim", "ms"],
+    "scopeName": "source.lichen",
 	"patterns": [
         {
         "include": "#comment"
@@ -30,11 +30,11 @@
         "comment": {
             "patterns": [
                 {
-                "name": "comment.line.double-slash.moss",
+                "name": "comment.line.double-slash.lichen",
                 "match": "(\\/\\/).*",
                 "captures": {
                     "1": {
-                    "name": "punctuation.definition.comment.moss"
+                    "name": "punctuation.definition.comment.lichen"
                     }
                 }
                 }
@@ -43,11 +43,11 @@
         "escape": {
             "patterns": [
                 {
-                "name": "constant.character.escape.moss",
+                "name": "constant.character.escape.lichen",
                 "match": "\\\\([tbarnf0\\\\\\'\\\"])"
                 },
                 {
-                "name": "invalid.illegal.character.escape.moss",
+                "name": "invalid.illegal.character.escape.lichen",
                 "match": "\\\\."
                 }
             ]
@@ -55,15 +55,15 @@
         "identifier": {
             "patterns": [
                 {
-                "name": "entity.name.function.moss",
+                "name": "entity.name.function.lichen",
                 "match": "\\b[_a-zA-Z0-9]+[']*(?=\\s*\\()"
                 },
                 {
-                "name": "entity.name.namespace.moss",
+                "name": "entity.name.namespace.lichen",
                 "match": "\\b[_a-zA-Z0-9]+[']*(?=\\s*::)"
                 },
                 {
-                "name": "variable.other.moss",
+                "name": "variable.other.lichen",
                 "match": "\\b[_a-zA-Z0-9]+[']*\\b"
                 }
             ]
@@ -71,38 +71,38 @@
         "integer-literal": {
             "patterns": [
                 {
-                "name": "constant.numeric.hex.moss",
+                "name": "constant.numeric.hex.lichen",
                 "match": "\\b0x[0-9A-Fa-f_]+\\b",
                 "captures": {
                     "1": {
-                    "name": "entity.name.type.numeric.moss"
+                    "name": "entity.name.type.numeric.lichen"
                     }
                 }
                 },
                 {
-                "name": "constant.numeric.oct.moss",
+                "name": "constant.numeric.oct.lichen",
                 "match": "\\b0o[0-7_]+\\b",
                 "captures": {
                     "1": {
-                    "name": "entity.name.type.numeric.moss"
+                    "name": "entity.name.type.numeric.lichen"
                     }
                 }
                 },
                 {
-                "name": "constant.numeric.bin.moss",
+                "name": "constant.numeric.bin.lichen",
                 "match": "\\b0b[01_]+\\b",
                 "captures": {
                     "1": {
-                    "name": "entity.name.type.numeric.moss"
+                    "name": "entity.name.type.numeric.lichen"
                     }
                 }
                 },
                 {
-                "name": "constant.numeric.decimal.moss",
+                "name": "constant.numeric.decimal.lichen",
                 "match": "\\b[0-9][0-9_]*\\b",
                 "captures": {
                     "1": {
-                    "name": "entity.name.type.numeric.moss"
+                    "name": "entity.name.type.numeric.lichen"
                     }
                 }
                 }
@@ -111,23 +111,23 @@
         "keyword": {
             "patterns": [
                 {
-                "name": "entity.name.type.primitive.moss",
+                "name": "entity.name.type.primitive.lichen",
                 "match": "\\b(?:str|unit|void)\\b"
                 },
                 {
-                "name": "entity.name.type.numeric.moss",
+                "name": "entity.name.type.numeric.lichen",
                 "match": "\\b(?:u8|u16|u32|u64|i8|i16|i32|i64|f32|f64)\\b"
                 },
                 {
-                "name": "constant.language.null.moss",
+                "name": "constant.language.null.lichen",
                 "match": "\\b(?:todo|fail|do)\\b"
                 },
                 {
-                "name": "keyword.control.moss",
+                "name": "keyword.control.lichen",
                 "match": "\\b(?:if|else|for|match|test)\\b"
                 },
                 {
-                "name": "keyword.other.moss",
+                "name": "keyword.other.lichen",
                 "match": "\\b(?:pub|use|type|let|fn)\\b"
                 }
             ]
@@ -148,31 +148,31 @@
         "operator": {
             "patterns": [
                 {
-                "name": "keyword.operator.assignment.moss",
+                "name": "keyword.operator.assignment.lichen",
                 "match": "="
                 },
                 {
-                "name": "keyword.operator.logical.moss",
+                "name": "keyword.operator.logical.lichen",
                 "match": "(?:&&|\\|\\||\\^\\^)"
                 },
                 {
-                "name": "keyword.operator.bitwise.moss",
+                "name": "keyword.operator.bitwise.lichen",
                 "match": "(?:~|&|\\||\\^|<<|>>)"
                 },
                 {
-                "name": "keyword.operator.comparison.moss",
+                "name": "keyword.operator.comparison.lichen",
                 "match": "(?:==|!=|<|<=|>|>=)"
                 },
                 {
-                "name": "keyword.operator.arithmetic.moss",
+                "name": "keyword.operator.arithmetic.lichen",
                 "match": "(?:\\+|\\-|\\*|\\/|%)"
                 },
                 {
-                "name": "keyword.operator.namespace.moss",
+                "name": "keyword.operator.namespace.lichen",
                 "match": "::"
                 },
                 {
-                "name": "keyword.operator.moss",
+                "name": "keyword.operator.lichen",
                 "match": "(?:!|\\?|:|\\$|@|#|\\.|\\.\\.|\\.\\.\\.)"
                 }
             ]
@@ -180,23 +180,23 @@
         "punctuation": {
             "patterns": [
                 {
-                "name": "punctuation.comma.moss",
+                "name": "punctuation.comma.lichen",
                 "match": ","
                 },
                 {
-                "name": "punctuation.semi.moss",
+                "name": "punctuation.semi.lichen",
                 "match": ";"
                 },
                 {
-                "name": "punctuation.brackets.round.moss",
+                "name": "punctuation.brackets.round.lichen",
                 "match": "[()]"
                 },
                 {
-                "name": "punctuation.brackets.square.moss",
+                "name": "punctuation.brackets.square.lichen",
                 "match": "[\\[\\]]"
                 },
                 {
-                "name": "punctuation.brackets.curly.moss",
+                "name": "punctuation.brackets.curly.lichen",
                 "match": "[{}]"
                 }
             ]
@@ -204,17 +204,17 @@
         "rune-literal": {
             "patterns": [
                 {
-                "name": "string.quoted.single.rune.moss",
+                "name": "string.quoted.single.rune.lichen",
                 "begin": "'\\b",
                 "beginCaptures": {
                     "0": {
-                    "name": "punctuation.definition.rune.moss"
+                    "name": "punctuation.definition.rune.lichen"
                     }
                 },
                 "end": "\\b'",
                 "endCaptures": {
                     "0": {
-                    "name": "punctuation.definition.rune.moss"
+                    "name": "punctuation.definition.rune.lichen"
                     }
                 },
                 "patterns": [
@@ -228,17 +228,17 @@
         "string-literal": {
             "patterns": [
                 {
-                "name": "string.quoted.double.moss",
+                "name": "string.quoted.double.lichen",
                 "begin": "\"",
                 "beginCaptures": {
                     "0": {
-                    "name": "punctuation.definition.string.moss"
+                    "name": "punctuation.definition.string.lichen"
                     }
                 },
                 "end": "\"",
                 "endCaptures": {
                     "0": {
-                    "name": "punctuation.definition.string.moss"
+                    "name": "punctuation.definition.string.lichen"
                     }
                 },
                 "patterns": [

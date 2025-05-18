@@ -1,8 +1,8 @@
 {
-    "name": "moss",
+    "name": "lichen",
     "publisher": "mikaela md <mikomdias@yahoo.com>",
-    "displayName": "moss syntax highlight",
-    "description": "basic code highlighting for the moss programming language",
+    "displayName": "lichen syntax highlight",
+    "description": "basic code highlighting for the lichen programming language",
     "version": "0.0.1",
     "license": "BUNNYWARE",
     "engines": {
@@ -12,19 +12,19 @@
         "Programming Languages"
     ],
     "keywords": [
-		"moss", "mmc"
+		"lichen", "moss", "llc", "mmc"
 	],
     "contributes": {
         "languages": [{
-            "id": "moss",
-            "aliases": ["moss", "mmc"],
-            "extensions": [".ms"],
+            "id": "lichen",
+            "aliases": ["lichen", "moss"],
+            "extensions": [".lic", ".lim"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
-            "language": "moss",
-            "scopeName": "source.moss",
-            "path": "./moss.tmLanguage.json"
+            "language": "lichen",
+            "scopeName": "source.lichen",
+            "path": "./lichen.tmLanguage.json"
         }]
     },
     "__metadata": {
