@@ -112,7 +112,7 @@
             "patterns": [
                 {
                 "name": "entity.name.type.primitive.lichen",
-                "match": "\\b(?:str|unit|void)\\b"
+                "match": "\\b(?:cstr|str|unit|void)\\b"
                 },
                 {
                 "name": "entity.name.type.numeric.lichen",
