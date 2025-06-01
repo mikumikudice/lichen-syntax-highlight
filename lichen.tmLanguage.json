@@ -128,7 +128,7 @@
                 },
                 {
                 "name": "keyword.other.lichen",
-                "match": "\\b(?:pub|use|type|let|fn)\\b"
+                "match": "\\b(?:pub|use|type|record|enum|let|fn)\\b"
                 }
             ]
         },
